@@ -7,7 +7,7 @@ for word in ssplit:
 	L.append(word)
 
 for word in L:
-	if word == "participate" or word == "participates" or word == "Participating":
+	if word == "participate" or word == "participates" or word == "Participating" or word == "participated":
 		indexOfwordAfter = L.index(word) + 1;
 		if(L[indexOfwordAfter] != "in"):
 			L[indexOfwordAfter] = "in"

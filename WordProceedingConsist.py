@@ -7,7 +7,7 @@ for word in ssplit:
 	L.append(word)
 
 for word in L:
-	if word == "consist" or word == "consists" or word == "consisting":
+	if word == "consist" or word == "consists" or word == "consisting" or word == "consisted":
 		indexOfwordAfter = L.index(word) + 1;
 		if(L[indexOfwordAfter] != "of"):
 			L[indexOfwordAfter] = "of"
