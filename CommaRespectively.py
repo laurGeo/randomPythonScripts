@@ -1,3 +1,4 @@
+#This script puts a comma before any word that preceeds the word 'respectively'.
 string = "Average sentence length for English and French being 22 and 24 words respectively."
 ssplit = string.split()
 L = list()
