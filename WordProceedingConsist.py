@@ -1,6 +1,6 @@
 #This script takes a string. If the word consist is not followed by 'of', it replaces the next word with
 
-string = "This is a consist in the thing"
+string = "It should consist in"
 ssplit = string.split()
 L = list()
 for word in ssplit:
@@ -12,4 +12,4 @@ for word in L:
 		if(L[indexOfwordAfter] != "of"):
 			L[indexOfwordAfter] = "of"
 			print "New sentence is now: "
-			print L
+			print ' '.join(L)
