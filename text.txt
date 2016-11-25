@@ -1,1 +1,2 @@
-Take in the name of the file, and the string Open the file, take the data with fileData = file.read() use original file. copy everything in it to variable obtained it now. I obtained obtained obtained consist in. hadh. participate in at
+I got the latest version. The first and second have the consistency with jelly and jam respectively.
+Hopefully I can participate of the new programme. 

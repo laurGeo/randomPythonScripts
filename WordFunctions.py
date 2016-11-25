@@ -3,8 +3,17 @@
 def applyRules(textData, filename):
 	print textData
 	newFile = open(filename, 'r+')
-	newFile.write(replaceGot(textData))
+	textData = replaceGot(textData)
+	#print textData
+	textData = WordProceedingConsistFunc(textData)
+	#print textData
+	textData = WordProceedingParticipate(textData)
+	#print textData
+	textData = CommaRespectively(textData)
+	print textData
 
+	#Only write the data to the file once.
+	newFile.write(textData)
 	newFile.close()
 
 
@@ -20,9 +29,9 @@ def replaceGot(textData):
 		index = L.index(word)
 		if ("getting" in word):
 			L[index] = "obtaining"
-		elif(word == "get"):
+		elif(word == "get" or word == "Get"):
 			L[index] = "obtain"
-		elif(word == "got" or word == "gotten"):
+		elif(word == "got" or word == "gotten" or word == "Got" or word == "Gotten"):
 			L[index] = "obtained"
 	newSentence = ' '.join(L)
 	#print "Old string: \n" + textData
@@ -64,6 +73,24 @@ def WordProceedingParticipate(textData):
 
 	newSentence = ' '.join(L)
 
+	return newSentence
+
+#Rule14
+#This script puts a comma before any word that preceeds the word 'respectively'.
+def CommaRespectively(textData):
+	ssplit = textData.split()
+	L = list()
+	for word in ssplit:
+		L.append(word)
+
+	for word in L:
+		#Does the word 'respectively' appear in any of the words (taking into account punctuation)
+		if("respectively" in word):
+			indexOfwordBefore = L.index(word) -1;
+			if L[indexOfwordBefore][-1:] != ",":
+				L[indexOfwordBefore] += ","
+
+	newSentence= ' '.join(L)
 	return newSentence
 
 
